@@ -18,7 +18,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
   
       if (response.ok) {
         // Redirect to another link after successful submission
-       // window.location.href = 'https://aianswer.us'; // Replace with your desired link
+        window.location.href = 'https://aianswer.us'; // Replace with your desired link
       } else {
         alert('Failed to save email address. Please try again later.');
       }
