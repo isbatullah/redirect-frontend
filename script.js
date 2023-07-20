@@ -14,12 +14,9 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         body: JSON.stringify(data),
       });
   
-      if (response.status === 205) {
-        const responseData = await response.json();
-        console.info('Custom status 205 response:', responseData);
-      } else if (response.ok) {
-        // Handle other successful responses (e.g., 200) as before
-        console.info('Regular response:', response);
+      if (response.ok) {
+        // Redirect to another link after successful submission
+       // window.location.href = 'https://aianswer.us'; // Replace with your desired link
       } else {
         alert('Failed to save email address. Please try again later.');
       }
