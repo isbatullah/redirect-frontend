@@ -4,9 +4,11 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
   
     const email = event.target.elements.email.value;
     const data = { email };
+    console.log(email)
+    console.log(data)
   
     try {
-      const response = await fetch('/api/storeEmail', {
+      const response = await fetch('https://redirect-backend.onrender.com/api/storeEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
