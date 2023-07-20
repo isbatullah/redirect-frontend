@@ -16,6 +16,8 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
   
       if (response.ok) {
         console.info(response)
+        console.info(response.body)
+        console.info(response.status)
         // Redirect to another link after successful submission
        // window.location.href = 'https://aianswer.us'; // Replace with your desired link
       } else {
