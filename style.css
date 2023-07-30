@@ -64,6 +64,7 @@ to {background-position: -100px 0px;background-size:2750px;}
   max-width: 400px;
 }
 
+.form-container input[type="text"],
 .form-container input[type="email"],
 .form-container button {
   display: block;
@@ -71,7 +72,8 @@ to {background-position: -100px 0px;background-size:2750px;}
   margin-bottom: 10px;
 }
 
-.form-container input[type="email"] {
+.form-container input[type="text"],
+.form-container input[type="email"]{
   padding-top: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -85,4 +87,10 @@ to {background-position: -100px 0px;background-size:2750px;}
   padding: 10px 10px;
 
   cursor: pointer;
+}
+
+.form-container label {
+  color:white;
+  font-family: 'Source Code Pro', monospace;
+  text-transform:uppercase;
 }
