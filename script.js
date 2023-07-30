@@ -17,8 +17,14 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
       });
   
       if (response.ok) {
-        // Redirect to another link after successful submission
-        window.location.href = 'https://aianswer.us'; // Replace with your desired link
+        // Read the redirect URL from local storage
+        const redirectURL = localStorage.getItem('redirectURL');
+        if (redirectURL) {
+          window.location.href = redirectURL;
+        } else {
+          // If no redirect URL is set, use a default URL
+          window.location.href = 'https://aianswer.us'; // Replace with your desired link
+        }
       } else {
         alert('Failed to save email address. Please try again later.');
       }
