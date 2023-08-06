@@ -3,24 +3,26 @@ document.getElementById('linkRedirectorForm').addEventListener('submit', async f
   
     const subdirectory = event.target.elements.subdirectory.value;
     const redirectLink = event.target.elements.redirectLink.value;
-  
-    try {
-      const response = await fetch('https://redirect-backend.onrender.com/api/createRedirector', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ subdirectory, redirectLink }),
-      });
-  
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log(responseData); // Confirmation message or additional data from the server
-      } else {
-        console.error('Failed to create redirector.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to create redirector. Please try again later.');
-    }
+    const data = {
+    subdirectory,
+    redirectLink,
+    };
+
+    // Make the API call to create the redirector page
+    fetch('https://redirect-backend.onrender.com/api/createRedirector', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Output the response from the server
+        // Handle success or show error message to the user
+      })
+      .catch((error) => {
+        console.error(error);
+        // Show error message to the user
+      })
   });
